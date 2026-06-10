@@ -4,7 +4,7 @@ Proyecto desarrollado con Node.js y Express
 
 ![Home](./web/public/img/pantallazo01.jpg)
 
-## Tecnologías utilizadas
+## Tecnologías utilizadas 
 
 - Node.js
 - Express
@@ -13,6 +13,8 @@ Proyecto desarrollado con Node.js y Express
 
 Requisitos:
 - Node.js instalado
+
+## Instalación
 
 1. Instalar dependencias
 
@@ -34,13 +36,26 @@ npm run dev
 
 ej: http://localhost:3000/
 
-# Notas
+## Notas
 
 - La carpeta `node_modules` no viene incluida.
 - Las dependencias se instalan con `npm install`.
 - El proyecto utiliza variables de entorno mediante `dotenv`
 
-créditos:
+## Información Técnica
+
+El servicio almacena el nombre de la mascota y el rut del dueño en un archivo en formato JSON. 
+Métodos:
+- GET sin parámetros: Retornar todas las mascotas con su correspondiente dueño.
+- GET con el parámetro nombre: Retornar la mascota con ese nombre y el rut de su
+dueño.
+- GET con el parámetro rut: Retornar todas las mascotas asociadas a ese rut.
+- POST: Inserta una mascota al archivo.
+- DELETE con parámetro nombre: elimina la mascota con ese nombre (si es que
+existe).
+- DELETE con parámetro rut: elimina todas las mascotas asociadas a ese rut.
+
+## Créditos:
 
 <a href="https://www.magnific.com/es/foto-gratis/lindo-perro-cerca-caminando-parque-su-dueno_3389864.htm#fromView=search&page=3&position=13&uuid=f37d6879-ac2c-4a59-b6b8-c1b293ebb08f&query=dog">Imagen de senivpetro en Magnific</a>
 
