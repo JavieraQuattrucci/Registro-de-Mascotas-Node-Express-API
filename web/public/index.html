@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministerio de las Mascotas - Registro Civil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>
+   
+</head>
+<body>
+
+<h1>🇨🇱 Registro Civil de Mascotas 🐾</h1>
+
+<div class="slider-container">
+    
+    <div class="slider" id="slider">
+      <div class="slide" id="slide-left">
+        <div class="slide-holder">
+          <div class="slide-bg bg-previous"></div>
+          <div class="slide-bg bg-current"></div>
+          <div class="slide-bg bg-next"></div>
+        </div>
+      </div>
+      <div class="slide" id="slide-center">
+        <div class="slide-holder">
+          <div class="slide-bg bg-previous"></div>
+          <div class="slide-bg bg-current"></div>
+          <div class="slide-bg bg-next"></div>
+        </div>
+      </div>
+      <div class="slide" id="slide-right">
+        <div class="slide-holder">
+          <div class="slide-bg bg-previous"></div>
+          <div class="slide-bg bg-current"></div>
+          <div class="slide-bg bg-next"></div>
+        </div>
+      </div>
+    </div>
+
+    <a class="arrow" id="left-arrow" href="#">
+        <i class="fa fa-arrow-circle-o-left">&lt;</i> </a>
+    <a class="arrow" id="right-arrow" href="#">
+        <i class="fa fa-arrow-circle-o-right">&gt;</i>
+    </a>
+
+</div>
+    <div id="alert-error" class="alert alert-error"></div>
+    <div id="alert-success" class="alert alert-success"></div>
+
+    <div class="card">
+        <h2>Inscribir Nueva Mascota</h2>
+        <form id="form-registro">
+            <div class="form-group">
+                <label for="reg-nombre">Nombre de la Mascota:</label>
+                <input type="text" id="reg-nombre" placeholder="Ej: Pelusa" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-rut">RUT del Dueño:</label>
+                <input type="text" id="reg-rut" placeholder="Ej: 12345678-9" required>
+            </div>
+            <button type="submit">Registrar Mascota</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Buscar o Eliminar Registros</h2>
+        <div class="form-group">
+            <label for="search-input">Ingrese Nombre o RUT:</label>
+            <input type="text" id="search-input" placeholder="Ej: Pelusa o 12345678-9">
+        </div>
+        <div class="btn-group">
+            <button onclick="buscarPorNombre()">Buscar por Nombre</button>
+            <button onclick="buscarPorRut()">Buscar por RUT</button>
+            <button class="btn-danger" onclick="eliminarPorNombre()">Eliminar por Nombre</button>
+            <button class="btn-danger" onclick="eliminarPorRut()">Eliminar por RUT</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Mascotas Registradas</h2>
+            <button onclick="cargarTodasLasMascotas()">Refrescar Lista Completa</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre Mascota</th>
+                    <th>RUT Dueño</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-mascotas">
+                </tbody>
+        </table>
+      
+        <script src="/js/script.js"></script>
+    </div>
+
+      <div class="img-final">
+            
+        </div>
+</body>
+</html>
